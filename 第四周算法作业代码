@@ -1,1 +1,102 @@
+#include<stdio.h> 
+//n的阶乘  递推方法 
+	int fun(int n)
+	{
+      
+      int a[100];int i;
+       a[1]=1;
+       a[2]=2;
+      
+      for(i=3;i<=n;i++)
+      {
+      	a[i]=a[i-1]*i;
+      }
+	return 	a[n];
+    }
+int main()
+{
+    int n; 
+  	scanf("%d",&n);
+    int fun (int n);
+    printf("输出数的阶乘为%d", fun (n));
+    return  0;	
+ } 
+ //分析   时间复杂度为  T（n）= O(N)
+ //       空间复杂度    S（n）=O(1)  
+ 
 
+
+
+#include<stdio.h>
+////n的阶乘  递归方法 
+	int fun(int n)
+	{
+
+	if(n==1)
+	return 1;
+		
+	if(n==2)
+	return 2;
+	
+	if(n>=3)
+
+	return  fun(n-1)*n;
+}
+int main()
+{
+    int n; 
+  	scanf("%d",&n);
+     fun (n);
+      printf("输出数的阶乘为%d",fun(n-1)*n);
+    return  0;	
+ } 
+
+ 
+ 
+ 
+ 
+ #include<stdio.h>
+//台阶问题递归方法 
+	int fun(int n)
+	{
+	if(n==1)
+	return 1;	
+	if(n==2)
+	return 2;	
+	if(n>=3)
+	return  fun(n-2)+ fun(n-1);
+}
+int main ()
+{
+	int n;
+	scanf("%d",&n);
+     fun (n);
+      printf("递归方法为%d",fun(n));
+    return  0;
+ } 
+ 
+ 
+ #include<stdio.h>
+//台阶问题递推方法 
+int fun(int n)
+{
+        int a[100];
+        a[1] = 1 ;
+        a[2] = 2 ;
+        for(int i=3 ; i<=n ;i++)
+		{
+            a[i] = a[i-1] + a[i-2] ;
+        }
+        return a[n] ;
+}
+int main()
+{
+    int n;
+	int a[100];
+    scanf("%d",&n);
+    int fun (int n);
+    printf("递推方法%d",fun(n)); 
+    return 0;
+ } 
+  //分析    时间复杂度   T(n)=O(n)
+ //         空间复杂度  S（n）=O（1） 
