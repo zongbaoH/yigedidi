@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string> 
+using namespace std;
+
+bool huiwen(string s, int low, int high){
+	if(s[low]!=s[high]){
+		return false;
+	}
+	if(low==high||low==high-1){
+		return true;
+	}
+	return huiwen(s, low+1, high-1);
+}
+
+int main(){
+	string s;
+	cin >> s;
+	int n = s.size();
+	bool res = huiwen(s, 0, n-1);
+	if(res==1){
+	cout <<s<<"is a palindrome." << endl;
+	}
+	else{
+		cout << s<< "is not a palindrome." << endl;
+	}
+	return 0;
+} 
